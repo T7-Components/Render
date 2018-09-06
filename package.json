@@ -12,7 +12,7 @@
     ]
   },
   "scripts": {
-    "build": "npm run test && rimraf build/* && cross-env BABEL_ENV=production webpack",
+    "build": "npm run test && rimraf build/* && webpack",
     "start": "cross-env BABEL_ENV=development webpack-dev-server --hot --inline --progress --content-base source",
     "pretest": "npm run lint",
     "lint": "eslint 'source/**/*.js' --fix",
@@ -25,6 +25,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.2",
     "eslint": "^5.5.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-config-standard-react": "^7.0.2",
@@ -40,6 +41,7 @@
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.4.2",
     "rimraf": "^2.6.2",
-    "webpack": "^4.17.2"
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
   }
 }
