@@ -4,9 +4,9 @@
   "description": "Conditionally render children when a condition is met",
   "author": "TandemSeven <github@tandemseven.com>",
   "license": "CC0-1.0",
-  "repository": "TandemSeven/react-components",
-  "homepage": "https://github.com/TandemSeven/react-components#readme",
-  "bugs": "https://github.com/TandemSeven/react-components/issues",
+  "repository": "T7-Components/render",
+  "homepage": "https://github.com/T7-Components/render#readme",
+  "bugs": "https://github.com/T7-Components/render/issues",
   "main": "index.cjs.js",
   "module": "index.es.js",
   "files": [
