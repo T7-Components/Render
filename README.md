@@ -19,4 +19,8 @@ or not in a Boolean context.
 <Render if={false}>
   <p>This does not.</p>
 </Render>
+
+<Render if={null || undefined}>
+  <p>This does not.</p>
+</Render>
 ```
