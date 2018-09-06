@@ -16,7 +16,7 @@ or not in a Boolean context.
   This renders.
 </Render>
 
-<Render if={someTruthyVar}>
+<Render if={somethingTruthy}>
   This renders.
 </Render>
 
