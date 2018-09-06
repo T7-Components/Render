@@ -8,6 +8,10 @@ The **Render** component conditionally renders children when a condition is met.
 or not in a Boolean context.
 
 ```jsx
+// ================
+// TRUTHY EXAMPLES.
+// ================
+
 <Render if={true}>
   This renders.
 </Render>
@@ -16,11 +20,15 @@ or not in a Boolean context.
   This renders.
 </Render>
 
+// ===============
+// FALSY EXAMPLES.
+// ===============
+
 <Render if={false}>
   This does not.
 </Render>
 
-<Render if={0 || null || undefined}>
+<Render if={0 || '' || null || undefined}>
   This does not.
 </Render>
 ```
