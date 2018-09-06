@@ -20,7 +20,7 @@ or not in a Boolean context.
   This does not.
 </Render>
 
-<Render if={null || undefined}>
+<Render if={0 || null || undefined}>
   This does not.
 </Render>
 ```
