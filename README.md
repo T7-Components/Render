@@ -25,10 +25,10 @@ or not in a Boolean context.
 // ===============
 
 <Render if={false}>
-  This does not.
+  This does not render.
 </Render>
 
 <Render if={0 || '' || NaN || null || undefined}>
-  This does not.
+  This does not render.
 </Render>
 ```
