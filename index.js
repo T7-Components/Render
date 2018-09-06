@@ -36,7 +36,7 @@ class Render extends React.Component {
 // Validation.
 Render.propTypes = {
   children: PropTypes.node,
-  
+
   // Any "truthy" values.
   if: PropTypes.any
 }
