@@ -1,24 +1,51 @@
-import { Component } from 'react'
+/*
+  // Used like so…
+
+  <Render if={this.props.bool}>
+    <p>
+      Super secret UI.
+    </p>
+  </Render>
+*/
+
+// Dependencies.
+import React from 'react'
 import PropTypes from 'prop-types'
 
-/** The **Render** component conditionally renders children when a condition is met. */
-export class Render extends Component {
-  /**
-   * Conditionally renders children when a condition is met
-   * @return {Fragment} The children or null
-   * See {@link https://reactjs.org/docs/fragments.html Fragment}
-   */
+// Define class.
+class Render extends React.Component {
+  // Render method.
   render () {
-    const { props: { if: isConditionTruthy, children } } = this
+    // Fallback.
+    let ui = null
 
-    return isConditionTruthy ? children : null
-  }
+    // Check boolean.
+    if (this.props.if) {
+      ui = this.props.children
+    }
 
-  static propTypes = {
-    /** The condition being evaluated */
-    if: PropTypes.any,
-
-    /** The conditionally rendered children */
-    children: PropTypes.node
+    // Expose UI.
+    return (
+      <React.Fragment>
+        {ui}
+      </React.Fragment>
+    )
   }
 }
+
+// Validation.
+Render.propTypes = {
+  children: PropTypes.node,
+  
+  // Any "truthy" values.
+  if: PropTypes.any
+}
+
+// Defaults.
+Render.defaultProps = {
+  children: null,
+  if: false
+}
+
+// Export.
+export default Render
