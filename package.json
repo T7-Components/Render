@@ -1,11 +1,11 @@
 {
   "name": "@t7/render",
   "version": "0.0.0",
-  "description": "Conditionally render children when a condition is met",
+  "main": "dist/index.js",
+  "description": "This React component conditionally renders its children.",
   "author": "TandemSeven <github@tandemseven.com>",
   "license": "MIT",
   "repository": "https://github.com/t7-components/render",
-  "main": "build/index.js",
   "jest": {
     "collectCoverageFrom": [
       "**/source/*.js",
@@ -13,13 +13,16 @@
     ]
   },
   "scripts": {
-    "build": "npm run test && rimraf build/* && webpack --mode production",
+    "clean": "rimraf build && rimraf dist",
+    "prebuild": "npm run test && npm run clean",
+    "build": "webpack --mode production",
+    "prepublishOnly": "babel source -d dist --copy-files",
     "start": "webpack-dev-server --mode development --open",
-    "pretest": "npm run lint",
     "lint": "eslint 'source/**/*.js' --fix",
+    "pretest": "npm run lint",
+    "test": "jest --coverage",
     "prepush": "npm test",
-    "postmerge": "npm install",
-    "test": "jest --coverage"
+    "postmerge": "npm install"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

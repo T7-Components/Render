@@ -1,11 +1,6 @@
 # Render
 
-The **Render** component conditionally renders children when a condition is met.
-
----
-
-`<Render>` uses the `if` property to evaluate whether an expression is truthy
-or not in a Boolean context.
+This React component conditionally renders its children.
 
 ```jsx
 // ================
