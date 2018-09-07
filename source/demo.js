@@ -17,13 +17,11 @@ class Demo extends React.Component {
 
     // Expose UI.
     return (
-      <React.Fragment>
-        <Render if={bool}>
-          <p>
-            If you are reading this, the component works.
-          </p>
-        </Render>
-      </React.Fragment>
+      <Render if={bool}>
+        <p>
+          If you are reading this, the component works.
+        </p>
+      </Render>
     )
   }
 }
