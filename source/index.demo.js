@@ -20,7 +20,7 @@ class Demo extends React.Component {
       <React.Fragment>
         <Render if={bool}>
           <p>
-            If you are reading this the component works.
+            If you are reading this, the component works.
           </p>
         </Render>
       </React.Fragment>

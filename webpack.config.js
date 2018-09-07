@@ -5,26 +5,10 @@
 const HtmlWebPackPlugin =
   require('html-webpack-plugin')
 
+const MiniCssExtractPlugin =
+  require('mini-css-extract-plugin')
+
 const path = require('path')
-
-// ========
-// Loaders.
-// ========
-
-const rules = [
-  {
-    test: /\.js$/,
-    use: 'babel-loader'
-  },
-  {
-    test: /\.css$/,
-    use: [
-      'style-loader',
-      'css-loader',
-      'postcss-loader'
-    ]
-  }
-]
 
 // ========
 // Plugins.
@@ -34,6 +18,9 @@ const plugins = [
   new HtmlWebPackPlugin({
     template: './source/demo.html',
     filename: './index.html'
+  }),
+  new MiniCssExtractPlugin({
+    filename: 'bundle.[hash].css'
   })
 ]
 
@@ -44,9 +31,29 @@ const plugins = [
 const configDevelopment = {
   plugins,
   module: {
-    rules
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader'
+        ]
+      }
+    ]
   },
-  entry: './source/demo.js',
+
+  // Use demo as source.
+  entry: './source/index.demo.js',
+
+  /*
+    Flush cache here, by using
+    the hash in the file name.
+  */
   output: {
     filename: 'bundle.[hash].js'
   }
@@ -59,9 +66,30 @@ const configDevelopment = {
 const configProduction = {
   plugins,
   module: {
-    rules
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
+        ]
+      }
+    ]
   },
+
+  // Use component as source.
   entry: './source/index.js',
+
+  /*
+    We do not use a hash in the file
+    name here, because it needs to be
+    consistent for NPM distribution.
+  */
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'index.js'
@@ -72,15 +100,11 @@ const configProduction = {
 // Export.
 // =======
 
-module.exports = (env, args) => {
-  // Default to dev.
-  let config = configDevelopment
-
-  // Production?
-  if (args.mode === 'production') {
-    config = configProduction
-  }
-
+module.exports = (env, args = {}) => {
   // Expose object.
-  return config
+  return (
+    args.mode === 'production'
+      ? configProduction
+      : configDevelopment
+  )
 }
