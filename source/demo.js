@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 // CSS.
-import './index.css'
+import './demo.css'
 
 // UI components.
 import Render from './'
