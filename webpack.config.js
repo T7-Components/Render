@@ -47,6 +47,9 @@ const configDevelopment = {
     ]
   },
 
+  // Use source maps for dev.
+  devtool: 'source-map',
+
   // Use demo as source.
   entry: './source/index.demo.js',
 
