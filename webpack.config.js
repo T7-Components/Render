@@ -51,7 +51,7 @@ const configDevelopment = {
   devtool: 'source-map',
 
   // Use demo as source.
-  entry: './source/index.demo.js',
+  entry: './source/demo.js',
 
   /*
     Flush cache here, by using

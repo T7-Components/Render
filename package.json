@@ -9,7 +9,7 @@
   "jest": {
     "collectCoverageFrom": [
       "**/source/*.js",
-      "!**/source/*.demo.js"
+      "!**/source/demo.js"
     ]
   },
   "scripts": {
