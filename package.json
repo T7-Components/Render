@@ -6,6 +6,14 @@
   "author": "TandemSeven <github@tandemseven.com>",
   "license": "MIT",
   "repository": "https://github.com/t7-components/render",
+  "keywords": [
+    "boolean",
+    "conditional",
+    "react",
+    "render",
+    "t7",
+    "tandemseven"
+  ],
   "jest": {
     "collectCoverageFrom": [
       "**/source/*.js",
