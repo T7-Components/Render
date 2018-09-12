@@ -1,4 +1,10 @@
-# Render
+# @t7/render
+
+```
+npm install @t7/render --save-dev
+```
+
+https://www.npmjs.com/package/@t7/render
 
 This React component conditionally renders its children.
 
