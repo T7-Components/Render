@@ -1,8 +1,14 @@
-# Render
+# render
 
-This React component conditionally renders its children.
+Conditionally render childrem
 
-```jsx
+## Installation
+```js
+npm install @t7/render --save-dev
+```
+
+## Usage
+```js
 // ================
 // TRUTHY EXAMPLES.
 // ================
