@@ -1,6 +1,7 @@
-# render
+# @t7/render
+https://www.npmjs.com/package/@t7/render
 
-Conditionally render childrem
+Conditionally render children
 
 ## Installation
 ```js
