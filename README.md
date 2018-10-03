@@ -34,3 +34,7 @@ npm install @t7/render --save-dev
   This does not render.
 </Render>
 ```
+
+Demo page:
+
+https://t7-components.github.io/render/build/
