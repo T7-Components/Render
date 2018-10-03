@@ -4,8 +4,8 @@ https://www.npmjs.com/package/@t7/render
 Conditionally render children
 
 ## Installation
-```js
-npm install @t7/render --save-dev
+```sh
+npm install @t7/render --save
 ```
 
 ## Usage
