@@ -1,7 +1,7 @@
 # @t7/render
 https://www.npmjs.com/package/@t7/render
 
-Conditionally render children
+A React component to conditionally render children
 
 ## Installation
 ```sh
